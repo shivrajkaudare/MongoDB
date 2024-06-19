@@ -3,3 +3,16 @@ MongoDB :
 - Non-Relational Database stores data in JSON format.
 - MongoDB is document oriented No-SQL database system.
 - it is an open source and cross-platform database system.
+
+BSON data :
+
+- Binary Json(only machines can read).
+- when we give JSON data to MongoDB it converts it into BSON data and then stored it in memory.
+
+Document :
+
+- Mongo stores data in the form of documents (BSON docs),
+
+Collection : - MongoDB stores documents in collections.
+
+# show collection - shows all collection in database.
