@@ -46,11 +46,21 @@ const User = mongoose.model("User", userSchema);
 
 // Inserting Multiple
 
-User.insertMany([
-  { name: "Nik", email: "Nik@gmail.com", age: 22 },
-  { name: "Deep", email: "deep@gmail.com", age: 23 },
-  { name: "Shivraj", email: "shivraj@gmail.com", age: 23 },
-])
+// User.insertMany([
+//   { name: "Nik", email: "Nik@gmail.com", age: 22 },
+//   { name: "Deep", email: "deep@gmail.com", age: 23 },
+//   { name: "Shivraj", email: "shivraj@gmail.com", age: 23 },
+// ])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// FIND / READ data
+
+User.find({ age: { $gt: 24 } })
   .then((res) => {
     console.log(res);
   })
