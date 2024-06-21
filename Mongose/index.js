@@ -95,3 +95,18 @@ User.deleteOne({ name: "Adam" })
   .catch((err) => {
     console.log(err);
   });
+
+// Basically, Rules for Schema
+
+const bookSchema = mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  author: {
+    type: String,
+  },
+  price: {
+    type: Number,
+  },
+});
