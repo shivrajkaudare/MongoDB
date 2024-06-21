@@ -78,7 +78,17 @@ const User = mongoose.model("User", userSchema);
 //     console.log(err);
 //   });
 
-User.updateMany({ age: { $gt: 23 } }, { age: 55 })
+// User.updateMany({ age: { $gt: 23 } }, { age: 55 })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+//---------------------------*** DELETE ******--------------//
+
+User.deleteOne({ name: "Adam" })
   .then((res) => {
     console.log(res);
   })
