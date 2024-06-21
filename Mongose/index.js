@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
 // creating Model(class)
 const User = mongoose.model("User", userSchema);
 
-// // Insert Data- inserting one
+// //---------****** Insert Data- inserting one ***---------------//
 // const user1 = new User({
 //   name: "Shiv",
 //   email: "Shiv@gmail.com",
@@ -58,9 +58,27 @@ const User = mongoose.model("User", userSchema);
 //     console.log(err);
 //   });
 
-// FIND / READ data
+//-----------****FIND / READ data****--------//
 
-User.find({ age: { $gt: 24 } })
+// User.find({ age: { $gt: 24 } })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+//--------------**** UPDATE Query ****---------//
+
+// User.updateOne({ name: "Shivraj" }, { age: 35 })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+User.updateMany({ age: { $gt: 23 } }, { age: 55 })
   .then((res) => {
     console.log(res);
   })
