@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 //Index Route
 app.get("/chats", async (req, res) => {
   let chats = await Chat.find();
-  console.log(chats);
+  // console.log(chats);
   res.render("index.ejs", { chats });
 });
 
@@ -66,9 +66,9 @@ app.get("/chats/:id/edit", async (req, res) => {
 });
 
 //update Route
-app.put("/chat/:id", async (req, res) => {
+app.put("/chats/:id", async (req, res) => {
   let { id } = req.params;
-  let { newMsg } = req.body;
+  let { msg: newMsg } = req.body;
   let updatedChat = await Chat.findByIdAndUpdate(
     id,
     { msg: newMsg },
@@ -77,6 +77,15 @@ app.put("/chat/:id", async (req, res) => {
   console.log(updatedChat);
   res.redirect("/chats");
 });
+
+// Delete Route
+app.delete("/chats/:id", async (req, res) => {
+  let { id } = req.params;
+  let deletedChat = await Chat.findByIdAndDelete(id);
+  console.log(deletedChat);
+  res.redirect("/chats");
+});
+
 const port = 8080;
 app.listen(port, () => {
   console.log(`server is listening on port ${port}`);
