@@ -1,3 +1,5 @@
+// designed schema for collections
+
 const mongoose = require("mongoose");
 
 const chatSchema = new mongoose.Schema({
